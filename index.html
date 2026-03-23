@@ -39,6 +39,11 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
+        .context-card {
+            border-top: 6px solid var(--accent);
+            background-color: white;
+        }
+
         .alert-box {
             background: linear-gradient(135deg, rgba(244,174,18,0.1) 0%, rgba(244,174,18,0.2) 100%);
             border: 2px solid var(--accent);
@@ -97,23 +102,23 @@
 </head>
 <body class="pb-24">
 
-    <!-- Header Gris Superior con logos en las esquinas -->
+    <!-- Header Gris Superior -->
     <header class="header-top sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo YSAC Izquierda -->
+            <!-- Logo YSAC -->
             <img src="Copy%20of%20Logo%20-%20YOUTH%20STARTUP%20ACADEMY%20Colombia%20(1).png" alt="Logo YSAC" class="logo-container">
             
-            <!-- Título Central en Azul -->
+            <!-- Título -->
             <div class="text-center">
                 <h1 class="text-2xl md:text-3xl font-bold tracking-tight font-heading text-[#041f60] uppercase leading-none">CARACTERIZACIÓN</h1>
                 <p class="text-xs md:text-sm text-[#041f60] font-mono font-bold tracking-[0.3em] uppercase">COHORTE 1</p>
             </div>
             
-            <!-- Logo EDI Derecha -->
+            <!-- Logo EDI -->
             <img src="EDI%20-%20Plataforma-01.png" alt="Logo EDI" class="logo-container">
         </div>
         
-        <!-- Franja Azul de Navegación -->
+        <!-- Franja de Pestañas -->
         <div class="bg-primary overflow-x-auto no-scrollbar shadow-inner">
             <div class="max-w-7xl mx-auto px-6 py-3 flex gap-2 text-[10px] font-bold uppercase whitespace-nowrap">
                 <button id="btn-general" onclick="setView('general')" class="tab-btn tab-active px-5 py-2.5 rounded-lg transition-all">General</button>
@@ -127,10 +132,10 @@
                 <button onclick="setView('group', '8')" class="tab-btn px-5 py-2.5 rounded-lg border border-white/5 transition-all">Grupo 8</button>
                 <button onclick="setView('group', '9')" class="tab-btn px-5 py-2.5 rounded-lg border border-white/5 transition-all">Grupo 9</button>
                 
-                <!-- Buscador de Equipos -->
+                <!-- Buscador -->
                 <div id="searchContainer" class="relative ml-auto hidden md:block opacity-0 transition-opacity">
                     <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-white/40"></i>
-                    <input type="text" id="globalSearch" placeholder="Escanear equipo..." 
+                    <input type="text" id="globalSearch" placeholder="Buscar equipo..." 
                         class="bg-white/10 border border-white/20 rounded-md py-1.5 pl-9 pr-3 text-[10px] text-white outline-none focus:bg-white/20 w-48 font-normal">
                 </div>
             </div>
@@ -138,23 +143,27 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-8">
-        <!-- Pestaña General: Infografía corregida a .png -->
+        <!-- Vista General -->
         <div id="generalView" class="animate-in fade-in duration-500">
             <div class="bg-white p-6 rounded-3xl shadow-xl border border-slate-200">
-                <img src="unnamed%20(6).png" alt="Radiografía del Ecosistema" class="w-full h-auto rounded-2xl">
+                <img src="unnamed%20(6).png" alt="Radiografía del Ecosistema" class="w-full h-auto rounded-2xl shadow-sm">
             </div>
+            
             <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-accent">
-                    <h3 class="font-bold text-primary mb-2 uppercase text-sm font-heading tracking-tight">Análisis Operativo</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Instrumento diseñado para la auditoría técnica de la Cohorte 1. Permite contrastar la capacidad de escala declarada frente a la evidencia real.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-8 border-[#f4ae12]">
+                    <h3 class="font-bold text-primary mb-2 uppercase text-sm font-heading">PERFIL A: Comercial Activa</h3>
+                    <p class="text-[11px] text-slate-500 font-bold mb-2 uppercase tracking-tighter italic">Nivel Alto</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">Ataquen la arquitectura de entrega: exijan auditoría de embudos, unit economics reales y aíslen el sobreesfuerzo manual.</p>
                 </div>
-                <div class="bg-primary text-white p-6 rounded-2xl shadow-lg border-b-4 border-accent transform hover:-translate-y-1 transition-transform">
-                    <h3 class="font-bold text-accent mb-2 uppercase text-sm font-heading tracking-tight">Filtro de Verdad EDI</h3>
-                    <p class="text-xs leading-relaxed italic">"Si los datos recolectados no demuestran reducción del riesgo dominante de este expediente, el experimento es técnicamente NO VÁLIDO."</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-8 border-[#f4ae12]">
+                    <h3 class="font-bold text-primary mb-2 uppercase text-sm font-heading">PERFIL B: Operativa</h3>
+                    <p class="text-[11px] text-slate-500 font-bold mb-2 uppercase tracking-tighter italic">Nivel Medio</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">Detecten la "falsa escalabilidad". ¿En qué paso exacto deben intervenir manualmente para que el cliente obtenga el resultado?</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-8 border-primary">
-                    <h3 class="font-bold text-primary mb-2 uppercase text-sm font-heading tracking-tight">Instrucción Facilitador</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Selecciona el grupo de tu sesión para activar las 41 fichas tácticas. Utiliza la sección de riesgos para desactivar sesgos de narrativa.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-8 border-[#f4ae12]">
+                    <h3 class="font-bold text-primary mb-2 uppercase text-sm font-heading">PERFIL C: Problema / Solución</h3>
+                    <p class="text-[11px] text-slate-500 font-bold mb-2 uppercase tracking-tighter italic">Nivel Bajo</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">Cero piedad metodológica. Bloqueen encuestas. Exijan pruebas del problema con pagos o acciones reales hoy.</p>
                 </div>
             </div>
         </div>
@@ -162,79 +171,137 @@
         <!-- Vista de Grupos -->
         <div id="groupView" class="hidden">
             <div id="gridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Se llena mediante JS -->
+                <!-- Se llena dinámicamente -->
             </div>
         </div>
     </main>
 
     <footer class="fixed bottom-0 left-0 right-0 bg-primary border-t-4 border-accent p-4 z-50 text-white shadow-2xl">
         <div class="max-w-7xl mx-auto flex justify-between items-center text-[11px] font-bold">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-microscope text-accent"></i> AUDITORÍA DE EVIDENCIA: 41 EXPEDIENTES ACTIVOS</span>
+            <span class="flex items-center gap-3"><i class="fa-solid fa-microscope text-accent"></i> CARACTERIZACIÓN ESTRATÉGICA: 41 EQUIPOS</span>
             <span class="text-accent font-mono uppercase tracking-[0.2em]">YSA COLOMBIA | EJE CAFETERO</span>
         </div>
     </footer>
 
     <script>
+        const socraticFocus = {
+            "A": "Cero excusas narrativas. No pregunten por el problema. Ataquen la arquitectura de entrega: exijan auditoría de embudos, unit economics reales y aíslen el sobreesfuerzo manual.",
+            "B": "Detectar la falsa escalabilidad. Oblíguenlos a encontrar el límite tecnológico de su operación. ¿En qué paso exacto deben intervenir manualmente para entregar valor?",
+            "C": "Cero piedad metodológica. Bloqueen validaciones basadas en encuestas. Exijan que demuestren el problema con pagos o acciones reales observables hoy."
+        };
+
+        const blockData = {
+            "AgroTech": {
+                title: "🌾 Agro / AgTech (21.4%)",
+                risk: "Brecha entre problema relevante y adopción real en campo.",
+                mirage: "Interés de actores rurales, necesidad evidente, 'validaciones conversacionales', uso asistido por el equipo.",
+                guillotine: "M1-C2 y M2-C2: Verificar adopción no asistida. Si el fundador debe 'empujar' la captura de datos, no hay adopción. Exigir claridad entre el usuario de campo y el pagador real.",
+                groups: ["1", "2"]
+            },
+            "B2B": {
+                title: "💼 Comercio B2B y Servicios (~20%)",
+                risk: "Tracción aparente sostenida con operación manual no escalable.",
+                mirage: "Ventas cerradas, pilotos, implementaciones activas... pero con ajustes constantes y soporte intensivo.",
+                guillotine: "M1-C2 y M1-C4: Examinar relación entre ingreso, personalización y carga operativa. Si repetir la venta exige más humanos, el sistema no escala.",
+                groups: ["3", "4"]
+            },
+            "B2C": {
+                title: "🛒 Comercio B2C (~15%)",
+                risk: "Interés alto con baja monetización o nula recurrencia.",
+                mirage: "Registros masivos, tráfico web, likes, descargas gratuitas o primeras compras aisladas.",
+                guillotine: "M1-C3 y M1-C4: Diferenciar atracción de transacción. No aceptar 'carritos abandonados'. Exigir cierre completo sin rescates por WhatsApp.",
+                groups: ["5"]
+            },
+            "Edu": {
+                title: "📚 Educación / EdTech (9.5%)",
+                risk: "Evidencia construida con el usuario, ignorando al comprador real.",
+                mirage: "Aceptación pedagógica, interés institucional ('nos dijeron que es muy útil'), pilotos en colegios.",
+                guillotine: "M2-C2: Identificar frontera de decisión. Quien 'usa' no es cliente si no asume costo. Exigir avance con quien aprueba presupuesto.",
+                groups: ["6"]
+            },
+            "Industry": {
+                title: "⚙️ Industria / Deep Tech (7.1%)",
+                risk: "Densidad técnica y sofisticación sin cierre de incertidumbre comercial.",
+                mirage: "Algoritmos complejos, IA, dashboards avanzados, discurso técnico muy sólido e intimidante.",
+                guillotine: "M1-C1 y M3-C2: Bloquear la 'deferencia técnica'. Confirmar qué dolor operativo ahorra. Validar costo real de integración.",
+                groups: ["7"]
+            },
+            "Health": {
+                title: "🏥 Salud / Fintech y Regulados (7.2%)",
+                risk: "Validación adelantada comercialmente sin resolver barreras habilitantes.",
+                mirage: "Necesidad clarísima del paciente, interés preliminar de compra, pruebas parciales de efectividad.",
+                guillotine: "M1-C1: Identificar riesgo letal. Verificar bloqueos regulatorios (INVIMA, Superfinanciera) antes de sobredimensionar intención.",
+                groups: ["8"]
+            },
+            "Creative": {
+                title: "🎨 Gastronomía y Creativas (7.2%)",
+                risk: "Respuesta inicial positiva basada en novedad, sin retención a largo plazo.",
+                mirage: "Curiosidad del cliente, picos de primeras ventas, muy buena recepción temprana en redes.",
+                guillotine: "M1-C4: Descartar la novedad como validación. Observar métricas de recompra y sostenibilidad del margen post-lanzamiento.",
+                groups: ["9"]
+            }
+        };
+
         const startups = [
-            // GRUPO 1
-            { group: "1", name: "Bloomster Coffee", sector: "AgroTech", trl: "3-4", model: "Híbrido", stage: "Operación Inicial", location: "Armenia", context: "3-4 personas. Infra y almacenaje.", vp: "Reportes automáticos tras ingreso de datos.", traction: ">20 usuarios. Conversaciones informales.", risks: "Supone adopción tech y monetización sin responsable técnico.", alert: "Validación Asistida. TRL bajo. ¿Capturan datos sin el equipo 'empujando'?", tech: false },
-            { group: "1", name: "Atlás logístico", sector: "Agro / Industria", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "2 personas. Costos en APIs y soporte.", vp: "Logística eficiente para aumentar producción.", traction: "6-20 usuarios. Ingresos recurrentes.", risks: "Dependencia de nube e IA en tableros operativos.", alert: "Falsa Escala. Admiten ajustes manuales. Auditar carga operativa oculta.", tech: true },
-            { group: "1", name: "TerraEmpleo", sector: "AgroTech", trl: "3", model: "Híbrido", stage: "Piloto", location: "Manizales", context: "5+ fundadores. Costo en infra.", vp: "Matching laboral agrícola con IA.", traction: "0 usuarios documentados.", risks: "Supone uso de app pese a conectividad rural limitada.", alert: "Adopción vs. Fricción. Exigir evidencia de uso NO asistido.", tech: false },
-            { group: "1", name: "AgriSphere", sector: "Agro / Sostenibilidad", trl: "5", model: "B2B", stage: "Operación Inicial", location: "Armenia", context: "2 fundadores. Soporte e infra.", vp: "Diagnóstico de sostenibilidad de cultivos.", traction: "6-20 usuarios. Ingresos recurrentes.", risks: "Retos en implementación de IA y formalización.", alert: "Operación Artesanal. ¿SaaS o consultoría disfrazada?", tech: true },
+            // G1
+            { group: "1", profile: "B", name: "Bloomster Coffee", sector: "AgroTech", trl: "3-4", model: "Híbrido", stage: "Operación Inicial", location: "Armenia", context: "3-4 personas. Infra y almacenaje.", vp: "Reportes automáticos tras ingreso de datos.", traction: ">20 usuarios.", risks: "Supone adopción tech y monetización sin responsable técnico.", alert: "Validación Asistida. TRL bajo. ¿Capturan datos sin el equipo 'empujando'?", tech: false },
+            { group: "1", profile: "A", name: "Atlás logístico", sector: "Agro / Industria", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "2 personas. Costos en APIs y soporte.", vp: "Logística eficiente para aumentar producción.", traction: "6-20 usuarios.", risks: "Dependencia de nube e IA en tableros operativos.", alert: "Falsa Escala. Admiten ajustes manuales. Auditar carga operativa oculta.", tech: true },
+            { group: "1", profile: "B", name: "TerraEmpleo", sector: "AgroTech", trl: "3", model: "Híbrido", stage: "Piloto", location: "Manizales", context: "5+ fundadores. Costo en infra.", vp: "Matching laboral agrícola con IA.", traction: "0 usuarios documentados.", risks: "Supone uso de app pese a conectividad rural limitada.", alert: "Adopción vs. Fricción. Exigir evidencia de uso NO asistido.", tech: false },
+            { group: "1", profile: "B", name: "AgriSphere", sector: "Agro / Sostenibilidad", trl: "5", model: "B2B", stage: "Operación Inicial", location: "Armenia", context: "2 fundadores. Soporte e infra.", vp: "Diagnóstico de sostenibilidad de cultivos.", traction: "6-20 usuarios.", risks: "Retos en implementación de IA y formalización.", alert: "Operación Artesanal. ¿SaaS o consultoría disfrazada?", tech: true },
 
-            // GRUPO 2
-            { group: "2", name: "Montoya Vélez", sector: "Agro / Plátano", trl: "5", model: "Híbrido", stage: "Crecimiento", location: "Manzanares", context: "5+ personas. Soporte humano.", vp: "Información técnica sobre cultivo de plátano.", traction: ">20 usuarios. Ventas puntuales.", risks: "Modelo apoyado en crecimiento zonal y referidos.", alert: "Sobreesfuerzo Manual. Aislar costo por cliente.", tech: true },
-            { group: "2", name: "Agronline", sector: "Agro / Comercio", trl: "3", model: "Híbrido", stage: "Prototipo", location: "Manizales", context: "3-4 personas. Licencias e infra.", vp: "Baja costos logísticos para campesinos.", traction: "0 usuarios documentados.", risks: "Apuesta a resolver gran desafío logístico.", alert: "Falso Cliente. ¿Paga el campesino o el acopiador?", tech: false },
-            { group: "2", name: "Setiva", sector: "Agro / Salud", trl: "3", model: "B2C", stage: "Operación Inicial", location: "S. Rosa Cabal", context: "2 fundadores. Maquinaria.", vp: "Salud mediante deshidratación (hongos).", traction: ">20 usuarios. Ventas puntuales.", risks: "Permisos INVIMA y adquisición de maquinaria.", alert: "Ventas no escalables. Auditar márgenes reales.", tech: true },
-            { group: "2", name: "Tierra de mieles", sector: "Agro / Apicultura", trl: "1-2", model: "Híbrido", stage: "Piloto", location: "Manizales", context: "2 personas. Estructura humana.", vp: "Vitrina de apicultores verificados.", traction: "1-5 usuarios, validación precaria.", risks: "Falta de reportes sobre monetización campesina.", alert: "Pérdida Total de Atribución. Elegir UN solo segmento.", tech: true },
-            { group: "2", name: "BioCafé", sector: "Agro / Café", trl: "5", model: "B2B / B2G", stage: "Prototipo", location: "Manizales", context: "1 fundador. Servidores.", vp: "Auditoría de fermentación con algoritmos.", traction: "1-5 participantes experimentales.", risks: "Falta estructuración para monetizar al campesino.", alert: "TRL alto sin mercado. Forzar solicitud económica.", tech: false },
+            // G2
+            { group: "2", profile: "B", name: "Montoya Vélez", sector: "Agro / Plátano", trl: "5", model: "Híbrido", stage: "Crecimiento", location: "Manzanares", context: "5+ personas. Soporte humano.", vp: "Información técnica sobre cultivo de plátano.", traction: ">20 usuarios.", risks: "Modelo apoyado en crecimiento zonal y referidos.", alert: "Sobreesfuerzo Manual. Aislar costo por cliente.", tech: true },
+            { group: "2", profile: "B", name: "Agronline", sector: "Agro / Comercio", trl: "3", model: "Híbrido", stage: "Prototipo", location: "Manizales", context: "3-4 personas. Licencias e infra.", vp: "Baja costos logísticos para campesinos.", traction: "0 usuarios documentados.", risks: "Apuesta a resolver gran desafío logístico.", alert: "Falso Cliente. ¿Paga el campesino o el acopiador?", tech: false },
+            { group: "2", profile: "B", name: "Setiva", sector: "Agro / Salud", trl: "3", model: "B2C", stage: "Operación Inicial", location: "S. Rosa Cabal", context: "2 fundadores. Maquinaria.", vp: "Salud mediante deshidratación.", traction: ">20 usuarios.", risks: "Permisos INVIMA y adquisición de maquinaria.", alert: "Ventas no escalables. Auditar márgenes reales.", tech: true },
+            { group: "2", profile: "B", name: "Tierra de mieles", sector: "Agro / Apicultura", trl: "1-2", model: "Híbrido", stage: "Piloto", location: "Manizales", context: "2 personas. Estructura humana.", vp: "Vitrina de apicultores verificados.", traction: "1-5 usuarios.", risks: "Falta de reportes sobre monetización campesina.", alert: "Pérdida Total de Atribución. Elegir UN solo segmento.", tech: true },
+            { group: "2", profile: "B", name: "BioCafé", sector: "Agro / Café", trl: "5", model: "B2B / B2G", stage: "Prototipo", location: "Manizales", context: "1 fundador. Servidores.", vp: "Auditoría de fermentación con algoritmos.", traction: "1-5 participantes experimentales.", risks: "Falta estructuración para monetizar al campesino.", alert: "TRL alto sin mercado. Forzar solicitud económica.", tech: false },
 
-            // GRUPO 3
-            { group: "3", name: "EBS WebDev", sector: "Comercio / Tech", trl: "5", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Soporte humano.", vp: "Soporte técnico web bajo demanda.", traction: ">20 usuarios. Ingresos recurrentes.", risks: "Supone que infraestructura actual soporta escala.", alert: "Dependencia Total del Fundador. Modelo de agencia.", tech: true },
-            { group: "3", name: "ChainLogix AI", sector: "Logística / IA", trl: "4", model: "Híbrido", stage: "Piloto", location: "Medellín", context: "2 personas. Licencias.", vp: "IA para optimizar operaciones logísticas.", traction: "6-20 usuarios. Ingresos puntuales.", risks: "Fragilidad en el modelo estructural.", alert: "Humo de IA. Aislar IA del sobreesfuerzo humano.", tech: true },
-            { group: "3", name: "Axis Group", sector: "Legaltech / IA", trl: "3", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ colaboradores. Talento.", vp: "IA para análisis de riesgos contractuales.", traction: "1-5 clientes. Ingresos recurrentes.", risks: "Necesidad de inteligencia agéntica efectiva.", alert: "¿Venden horas de abogados disfrazadas de IA?", tech: true },
-            { group: "3", name: "Eteriux", sector: "Software / Salud", trl: "6", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "3-4 personas. APIs.", vp: "Notificaciones desde Google Sheets.", traction: "6-20 clientes.", risks: "Necesidad de autogestión del cliente.", alert: "Dependencia de APIs de Google. ¿Core frágil?", tech: true },
-            { group: "3", name: "Datum Datalab - Beezum", sector: "Software / Salud", trl: "6", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "5+ colaboradores.", vp: "Desarrollo a medida y analítica.", traction: "1-5 usuarios recurrentes.", risks: "No identifica supuestos explícitos.", alert: "Falsa Startup. Es una software factory.", tech: true },
+            // G3
+            { group: "3", profile: "A", name: "EBS WebDev", sector: "Comercio / Tech", trl: "5", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Soporte humano.", vp: "Soporte técnico web bajo demanda.", traction: ">20 usuarios.", risks: "Supone que infraestructura actual soporta escala.", alert: "Dependencia Total del Fundador. Modelo de agencia.", tech: true },
+            { group: "3", profile: "B", name: "ChainLogix AI", sector: "Logística / IA", trl: "4", model: "Híbrido", stage: "Piloto", location: "Medellín", context: "2 personas. Licencias.", vp: "IA para optimizar operaciones logísticas.", traction: "6-20 usuarios.", risks: "Fragilidad en el modelo estructural.", alert: "Humo de IA. Aislar IA del sobreesfuerzo humano.", tech: true },
+            { group: "3", profile: "A", name: "Axis Group SAS", sector: "Legaltech / IA", trl: "3", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ colaboradores. Talento.", vp: "IA para análisis de riesgos contractuales.", traction: "1-5 clientes.", risks: "Necesidad de inteligencia agéntica efectiva.", alert: "¿Venden horas de abogados disfrazadas de IA?", tech: true },
+            { group: "3", profile: "A", name: "Eteriux Solutions", sector: "Software / Salud", trl: "6", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "3-4 personas. APIs.", vp: "Notificaciones desde Google Sheets.", traction: "6-20 clientes.", risks: "Necesidad de autogestión del cliente.", alert: "Dependencia de APIs de Google.", tech: true },
+            { group: "3", profile: "B", name: "Datum Datalab", sector: "Software / Salud", trl: "6", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "5+ colaboradores.", vp: "Desarrollo a medida y analítica.", traction: "1-5 usuarios recurrent.", risks: "No identifica supuestos explícitos.", alert: "Falsa Startup. Es una software factory.", tech: true },
 
-            // GRUPO 4
-            { group: "4", name: "Mentagora - ADAS (Software)", sector: "SST", trl: "1-2", model: "B2B", stage: "Idea", location: "Manizales", context: "1 fundador. Soporte humano.", vp: "Asesoría automatizada en SST.", traction: "0 usuarios. Validación informal.", risks: "Supone que PYME pagará por software sobre asesor físico.", alert: "Falsa Tecnología. El software colapsa hoy.", tech: false },
-            { group: "4", name: "Accountax Group", sector: "Contable / IA", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Almacenamiento.", vp: "IA para dudas tributarias y fiscales.", traction: "6-20 clientes.", risks: "Margen de error fiscal y conformación equipo.", alert: "Falsa Automatización. ¿Hay humanos detrás?", tech: true },
-            { group: "4", name: "Endondee.com", sector: "Turismo", trl: "5", model: "Híbrido", stage: "Operación Inicial", location: "Viterbo", context: "3-5+ fundadores.", vp: "Guía comercial para pueblos turísticos.", traction: ">20 usuarios. Ingresos recurrentes.", risks: "Riesgo de colapso con flujo masivo.", alert: "Colapso Operativo declarado. Falla estructural.", tech: true },
-            { group: "4", name: "Esencia Andina", sector: "Salud / Belleza", trl: "1-2", model: "B2C / B2B", stage: "Idea", location: "Calarcá", context: "1 fundador.", vp: "Mercancía naturista regional.", traction: "Sin ingresos.", risks: "Desafíos en penetración de mercado.", alert: "Alto CAPEX Regulatorio. Validar permisos.", tech: false },
-            { group: "4", name: "Dev Mark", sector: "Comercio Digital", trl: "6-7+", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Centralización de herramientas empresariales.", traction: ">20 clientes.", risks: "Necesidad de rediseño estructural.", alert: "Ruido de Integración de herramientas externas.", tech: true },
+            // G4
+            { group: "4", profile: "C", name: "Mentagora - ADAS (Software)", sector: "SST", trl: "1-2", model: "B2B", stage: "Idea", location: "Manizales", context: "1 fundador. Soporte humano.", vp: "Asesoría automatizada en SST.", traction: "0 usuarios.", risks: "Supone que PYME pagará por software sobre asesor físico.", alert: "Falsa Tecnología. El software colapsa hoy.", tech: false },
+            { group: "4", profile: "A", name: "ACCOUNTAX GROUP", sector: "Contable / IA", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Almacenamiento.", vp: "IA para dudas tributarias y fiscales.", traction: "6-20 clientes.", risks: "Margen de error fiscal y conformación equipo.", alert: "Falsa Automatización. ¿Hay humanos detrás?", tech: true },
+            { group: "4", profile: "B", name: "Endondee.com", sector: "Turismo", trl: "5", model: "Híbrido", stage: "Operación Inicial", location: "Viterbo", context: "3-5+ fundadores.", vp: "Guía comercial para pueblos turísticos.", traction: ">20 usuarios.", risks: "Riesgo de colapso con flujo masivo.", alert: "Colapso Operativo declarado. Falla estructural.", tech: true },
+            { group: "4", profile: "C", name: "Esencia Andina", sector: "Salud / Belleza", trl: "1-2", model: "B2C / B2B", stage: "Idea", location: "Calarcá", context: "1 fundador.", vp: "Mercancía naturista regional.", traction: "Sin ingresos.", risks: "Desafíos en penetración de mercado.", alert: "Alto CAPEX Regulatorio. Validar permisos.", tech: false },
+            { group: "4", profile: "A", name: "DEVMARK", sector: "Comercio Digital", trl: "6-7+", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Centralización de herramientas empresariales.", traction: ">20 clientes.", risks: "Necesidad de rediseño estructural.", alert: "Ruido de Integración de herramientas externas.", tech: true },
 
-            // GRUPO 5
-            { group: "5", name: "Queuva", sector: "Comercio", trl: "6", model: "Híbrido", stage: "Operación Inicial", location: "Manizales", context: "1 persona. Soporte humano.", vp: "Ropa infantil patentada expansible.", traction: ">20 usuarios.", risks: "Supone que licenciamiento funcionará.", alert: "Ruido de Modelo. Mezclan B2B/B2C.", tech: true },
-            { group: "5", name: "Crea Mos y YiloFraseando Publicidad", sector: "Comercio", trl: "1-2", model: "B2C", stage: "Operación Inicial", location: "Viterbo", context: "1 fundador.", vp: "Detalles y soluciones publicitarias.", traction: ">20 usuarios. Ventas puntuales.", risks: "Dependencia de colaboraciones locales.", alert: "Inviabilidad de Escala. Negocio manual.", tech: false },
-            { group: "5", name: "Buena Vibra", sector: "Alimentos", trl: "6", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Productos de bienestar con recompra.", traction: ">20 usuarios.", risks: "Necesidad de tracción en grandes retailers.", alert: "Falso B2C Digital. Dependen del retail.", tech: true },
-            { group: "5", name: "Open sostenible", sector: "Comercio Circular", trl: "1-2", model: "B2C", stage: "Crecimiento", location: "Manizales", context: "2 colaboradores.", vp: "Moda circular y segunda mano.", traction: "6-20 usuarios.", risks: "Sustentado en membresías cruzadas.", alert: "Interés sin Modelo. Aislar prueba comercial.", tech: true },
-            { group: "5", name: "Tecu.co", sector: "Comercio / Muebles", trl: "7+", model: "B2C", stage: "Crecimiento", location: "Armenia", context: "5+ personas.", vp: "Diseño virtual y fabricación a medida.", traction: ">20 usuarios. Pagos recurrentes.", risks: "Vulnerabilidad ante crisis logística.", alert: "Delivery físico no escalable. Carpintería 1 a 1.", tech: true },
+            // G5
+            { group: "5", profile: "B", name: "Queuva", sector: "Comercio", trl: "6", model: "Híbrido", stage: "Operación Inicial", location: "Manizales", context: "1 persona. Soporte humano.", vp: "Ropa infantil patentada expansible.", traction: ">20 usuarios.", risks: "Supone que licenciamiento funcionará.", alert: "Ruido de Modelo. Mezclan B2B/B2C.", tech: true },
+            { group: "5", profile: "B", name: "creamos y YiloFraseando", sector: "Comercio", trl: "1-2", model: "B2C", stage: "Operación Inicial", location: "Viterbo", context: "1 fundador.", vp: "Detalles y soluciones publicitarias.", traction: ">20 usuarios.", risks: "Dependencia de colaboraciones locales.", alert: "Inviabilidad de Escala. Negocio manual.", tech: false },
+            { group: "5", profile: "A", name: "Buena Vibra", sector: "Alimentos", trl: "6", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Productos de bienestar con recompra.", traction: ">20 usuarios.", risks: "Necesidad de tracción en grandes retailers.", alert: "Falso B2C Digital. Dependen del retail.", tech: true },
+            { group: "5", profile: "C", name: "open sostenible", sector: "Comercio Circular", trl: "1-2", model: "B2C", stage: "Crecimiento", location: "Manizales", context: "2 colaboradores.", vp: "Moda circular y segunda mano.", traction: "6-20 usuarios.", risks: "Sustentado en membresías cruzadas.", alert: "Interés sin Modelo. Aislar prueba comercial.", tech: true },
+            { group: "5", profile: "A", name: "TECU.CO SAS", sector: "Comercio / Muebles", trl: "7+", model: "B2C", stage: "Crecimiento", location: "Armenia", context: "5+ personas.", vp: "Diseño virtual y fabricación a medida.", traction: ">20 usuarios.", risks: "Vulnerabilidad ante crisis logística.", alert: "Delivery físico no escalable. Carpintería 1 a 1.", tech: true },
 
-            // GRUPO 6
-            { group: "6", name: "DigitalES", sector: "Educación", trl: "3", model: "B2C", stage: "Prototipo", location: "Manizales", context: "1 fundador. Soporte.", vp: "Acompañamiento IA para docentes.", traction: ">20 usuarios.", risks: "Supone que autoridades aceptarán IA.", alert: "Falso Pagador. El docente no suele pagar.", tech: false },
-            { group: "6", name: "Nexo habitat (Casa taller)", sector: "Educación", trl: "1-2", model: "B2C", stage: "Idea", location: "Manizales", context: "1 fundador. Papelería.", vp: "Espacios 24/7 para proyectos.", traction: "1-5 usuarios.", risks: "Supone uso frecuente 24/7.", alert: "Deseo vs. Disposición de Pago. Idea CAPEX.", tech: false },
-            { group: "6", name: "Mettaser", sector: "EduFinTech", trl: "5", model: "B2C / Híbrido", stage: "Crecimiento", location: "Pereira", context: "3-4 personas. APIs.", vp: "Diagnóstico financiero para emprendedores.", traction: ">20 usuarios.", risks: "Supone que usuario acatará planes.", alert: "Operación Artesanal. Depende del mentor.", tech: true },
-            { group: "6", name: "CapitalIA", sector: "Educación", trl: "1-2", model: "B2B", stage: "Idea", location: "Manizales", context: "3-4 fundadores. Servidores.", vp: "Coach inteligente para empresas.", traction: "0 usuarios.", risks: "Creen en uso recurrente de empleados.", alert: "Cortina IA en Idea. ¿Pagará RRHH?", tech: true },
-            { group: "6", name: "OneVoz Media", sector: "Comunicaciones", trl: "3", model: "Híbrido", stage: "Operación Inicial", location: "Manizales", context: "3-4 personas. Infra.", vp: "Reportes automáticos en medios.", traction: "1-5 usuarios.", risks: "Supone conversión orgánica.", alert: "Falso Positivo. Sin ventas reales.", tech: true },
+            // G6
+            { group: "6", profile: "C", name: "DigitalES", sector: "Educación", trl: "3", model: "B2C", stage: "Prototipo", location: "Manizales", context: "1 fundador. Soporte.", vp: "Acompañamiento IA para docentes.", traction: ">20 usuarios.", risks: "Supone que autoridades aceptarán IA.", alert: "Falso Pagador. El docente no suele pagar.", tech: false },
+            { group: "6", profile: "C", name: "Nexo habitat (Casa taller)", sector: "Educación", trl: "1-2", model: "B2C", stage: "Idea", location: "Manizales", context: "1 fundador. Papelería.", vp: "Espacios 24/7 para proyectos.", traction: "1-5 usuarios.", risks: "Supone uso frecuente 24/7.", alert: "Deseo vs. Disposición de Pago. Idea CAPEX.", tech: false },
+            { group: "6", profile: "B", name: "METTASER SAS", sector: "EduFinTech", trl: "5", model: "B2C / Híbrido", stage: "Crecimiento", location: "Pereira", context: "3-4 personas. APIs.", vp: "Diagnóstico financiero para emprendedores.", traction: ">20 usuarios.", risks: "Supone que usuario acatará planes.", alert: "Operación Artesanal. Depende del mentor.", tech: true },
+            { group: "6", profile: "C", name: "CapitalIA", sector: "Educación", trl: "1-2", model: "B2B", stage: "Idea", location: "Manizales", context: "3-4 fundadores. Servidores.", vp: "Coach inteligente para empresas.", traction: "0 usuarios.", risks: "Creen en uso recurrente de empleados.", alert: "Cortina IA en Idea. ¿Pagará RRHH?", tech: true },
+            { group: "6", profile: "C", name: "OneVoz Media", sector: "Comunicaciones", trl: "3", model: "Híbrido", stage: "Operación Inicial", location: "Manizales", context: "3-4 personas. Infra.", vp: "Reportes automáticos en medios.", traction: "1-5 usuarios.", risks: "Supone conversión orgánica.", alert: "Falso Positivo. Sin ventas reales.", tech: true },
 
-            // GRUPO 7
-            { group: "7", name: "Solux Webs", sector: "Industria / Tech", trl: "6/7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "2 personas. Soporte humano.", vp: "Reportes en tiempo real de calidad.", traction: ">20 usuarios.", risks: "Cliente prefiere datos manuales.", alert: "Espejismo de Software. Mucho manual detrás.", tech: true },
-            { group: "7", name: "Orbiplan", sector: "Industria / Metal", trl: "3", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "2 fundadores.", vp: "Seguimiento a proyectos industriales.", traction: "0 usuarios.", risks: "Supone plataforma simple para planta.", alert: "Desconexión Técnica. ¿Ingresarán datos?", tech: false },
-            { group: "7", name: "Logic metric", sector: "Software / IA", trl: "5", model: "B2B", stage: "Operación Inicial", location: "Armenia", context: "3-4 fundadores.", vp: "Pronósticos IA para ventas.", traction: "1-5 usuarios.", risks: "Supone adopción sin personalización.", alert: "Fricción de Integración B2B.", tech: true },
-            { group: "7", name: "Kosmostic", sector: "Telecomunicaciones", trl: "4", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Soporte.", vp: "Telefonía IP en la nube.", traction: "6-20 empresas.", risks: "Confianza en internet para infra crítica.", alert: "Soporte no escalable. Fragilidad ante caídas.", tech: true },
-            { group: "7", name: "Sof Alios", sector: "Tecnología", trl: "-", model: "-", stage: "Provisional", location: "TBD", context: "Tarjeta provisional.", vp: "Pendiente por definir.", traction: "-", risks: "Información pendiente.", alert: "Pendiente de auditoría.", tech: false, isPlaceholder: true },
+            // G7
+            { group: "7", profile: "A", name: "Solux Webs S.A.S", sector: "Industria / Tech", trl: "6/7+", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "2 personas. Soporte humano.", vp: "Reportes en tiempo real de calidad.", traction: ">20 usuarios.", risks: "Cliente prefiere datos manuales.", alert: "Espejismo de Software. Mucho manual detrás.", tech: true },
+            { group: "7", profile: "C", name: "Orbiplan", sector: "Industria / Metal", trl: "3", model: "Híbrido", stage: "Crecimiento", location: "Manizales", context: "2 fundadores.", vp: "Seguimiento a proyectos industriales.", traction: "0 usuarios.", risks: "Supone plataforma simple para planta.", alert: "Desconexión Técnica. ¿Ingresarán datos?", tech: false },
+            { group: "7", profile: "A", name: "Logic metric", sector: "Software / IA", trl: "5", model: "B2B", stage: "Operación Inicial", location: "Armenia", context: "3-4 fundadores.", vp: "Pronósticos IA para ventas.", traction: "1-5 usuarios.", risks: "Supone adopción sin personalización.", alert: "Fricción de Integración B2B.", tech: true },
+            { group: "7", profile: "B", name: "KOSMOSTIC.SAS", sector: "Telecomunicaciones", trl: "4", model: "B2B", stage: "Crecimiento", location: "Manizales", context: "5+ personas. Soporte.", vp: "Telefonía IP en la nube.", traction: "6-20 empresas.", risks: "Confianza en internet para infra crítica.", alert: "Soporte no escalable. Fragilidad ante caídas.", tech: true },
+            { group: "7", profile: "C", name: "Sof Alios", sector: "Tecnología", trl: "-", model: "-", stage: "Provisional", location: "TBD", context: "Tarjeta provisional.", vp: "Pendiente por definir.", traction: "-", risks: "Información pendiente.", alert: "Pendiente de auditoría.", tech: false, isPlaceholder: true },
 
-            // GRUPO 8
-            { group: "8", name: "Moscorkil", sector: "Salud Pública", trl: "6", model: "Híbrido", stage: "Operación Inicial", location: "Pereira", context: "2 personas.", vp: "Larvicida mensual mosquitos.", traction: "1-5 usuarios.", risks: "Regalo de muestras en España.", alert: "Regalan pilotos. Auditar recurrencia.", tech: true },
-            { group: "8", name: "La Manada", sector: "Fitness", trl: "4", model: "B2C", stage: "Crecimiento", location: "Armenia", context: "3-4 personas.", vp: "App monitoreo carga atletas.", traction: ">20 usuarios.", risks: "Compiten contra Excel gratis.", alert: "Sobreesfuerzo del Coach. ¿Pagarán?", tech: true },
-            { group: "8", name: "Clavilab", sector: "Biotecnología", trl: "3", model: "B2B", stage: "Prototipo", location: "Manizales", context: "1 persona.", vp: "Materiales innovadores arte.", traction: "1-5 testeadores.", risks: "Costo muy alto de tecnología.", alert: "Inviabilidad por costos de producción.", tech: false },
-            { group: "8", name: "Rayros Servicios Financieros", sector: "Fintech", trl: "7+", model: "Híbrido", stage: "Crecimiento", location: "Supía", context: "2-4 fundadores.", vp: "Financiación motos informal.", traction: ">20 usuarios.", risks: "Disciplina de pago informal.", alert: "Calidad de Riesgo de cartera.", tech: true },
-            { group: "8", name: "Delta Audiovisual", sector: "Turismo", trl: "4", model: "B2B / B2G", stage: "Operación Inicial", location: "Armenia", context: "1 persona.", vp: "Mundos virtuales arquitectura.", traction: "1-5 usuarios.", risks: "Revolución visual vs adopción.", alert: "Bajo TRL para ambición metaverso.", tech: true },
+            // G8
+            { group: "8", profile: "B", name: "Moscorkil®", sector: "Salud Pública", trl: "6", model: "Híbrido", stage: "Operación Inicial", location: "Pereira", context: "2 personas.", vp: "Larvicida mensual mosquitos.", traction: "1-5 usuarios.", risks: "Regalo de muestras en España.", alert: "Regalan pilotos. Auditar recurrencia.", tech: true },
+            { group: "8", profile: "B", name: "La Manada", sector: "Fitness", trl: "4", model: "B2C", stage: "Crecimiento", location: "Armenia", context: "3-4 personas.", vp: "App monitoreo carga atletas.", traction: ">20 usuarios.", risks: "Compiten contra Excel gratis.", alert: "Sobreesfuerzo del Coach. ¿Pagarán?", tech: true },
+            { group: "8", profile: "C", name: "ClaviLab", sector: "Biotecnología", trl: "3", model: "B2B", stage: "Prototipo", location: "Manizales", context: "1 persona.", vp: "Materiales innovadores arte.", traction: "1-5 testeadores.", risks: "Costo muy alto de tecnología.", alert: "Inviabilidad por costos de producción.", tech: false },
+            { group: "8", profile: "A", name: "Rayros Servicios Financieros", sector: "Fintech", trl: "7+", model: "Híbrido", stage: "Crecimiento", location: "Supía", context: "2-4 fundadores.", vp: "Financiación motos informal.", traction: ">20 usuarios.", risks: "Disciplina de pago informal.", alert: "Calidad de Riesgo de cartera.", tech: true },
+            { group: "8", profile: "C", name: "Delta Audiovisual", sector: "Turismo", trl: "4", model: "B2B / B2G", stage: "Operación Inicial", location: "Armenia", context: "1 persona.", vp: "Mundos virtuales arquitectura.", traction: "1-5 usuarios.", risks: "Revolución visual vs adopción.", alert: "Bajo TRL para ambición metaverso.", tech: true },
 
-            // GRUPO 9
-            { group: "9", name: "Innovation core sas", sector: "Gastronomía", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Armenia", context: "3-4 colaboradores.", vp: "Gestión total restaurantes (POS).", traction: ">20 usuarios.", risks: "Expansión internacional difícil.", alert: "Escala Aparente. Auditar Unit Economics.", tech: true },
-            { group: "9", name: "Ñammy", sector: "Gastronomía", trl: "3", model: "B2C", stage: "Prototipo", location: "Armenia", context: "1 persona.", vp: "Indexación recetas culinarias.", traction: "1-5 usuarios.", risks: "Depende de volumen de recetas.", alert: "¿Qué resuelve que no sea gratis?", tech: false },
-            { group: "9", name: "Arte Otaku", sector: "Artes Creativas", trl: "5", model: "B2C", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Realidad aumentada en obras.", traction: ">20 usuarios.", risks: "Costo de creación AR.", alert: "Novedad sin transacción real.", tech: false }
+            // G9
+            { group: "9", profile: "A", name: "Innovation core sas", sector: "Gastronomía", trl: "7+", model: "B2B", stage: "Crecimiento", location: "Armenia", context: "3-4 colaboradores.", vp: "Gestión total restaurantes (POS).", traction: ">20 usuarios.", risks: "Expansión internacional difícil.", alert: "Escala Aparente. Auditar Unit Economics.", tech: true },
+            { group: "9", profile: "C", name: "Ñammy", sector: "Gastronomía", trl: "3", model: "B2C", stage: "Prototipo", location: "Armenia", context: "1 persona.", vp: "Indexación recetas culinarias.", traction: "1-5 usuarios.", risks: "Depende de volumen de recetas.", alert: "¿Qué resuelve que no sea gratis?", tech: false },
+            { group: "9", profile: "B", name: "Arte Otaku", sector: "Artes Creativas", trl: "5", model: "B2C", stage: "Crecimiento", location: "Manizales", context: "3-4 personas.", vp: "Realidad aumentada en obras.", traction: ">20 usuarios.", risks: "Costo de creación AR.", alert: "Novedad sin transacción real.", tech: false }
         ];
 
         const grid = document.getElementById('gridContainer');
@@ -262,8 +329,58 @@
             }
         }
 
+        function getBlockForGroup(groupId) {
+            for (let blockKey in blockData) {
+                if (blockData[blockKey].groups.includes(groupId)) {
+                    return blockData[blockKey];
+                }
+            }
+            return null;
+        }
+
         function renderCards(filterText = "", groupFilter = "all") {
             grid.innerHTML = "";
+            
+            // Context Card
+            if (groupFilter !== "all") {
+                const block = getBlockForGroup(groupFilter);
+                if (block) {
+                    const ctxCard = document.createElement('div');
+                    ctxCard.className = "context-card p-6 rounded-3xl shadow-xl border border-slate-200 col-span-1 md:col-span-2 lg:col-span-3 mb-4 animate-in slide-in-from-top duration-300";
+                    ctxCard.innerHTML = `
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/3 border-r border-slate-100 pr-6">
+                                <h2 class="text-xl font-bold text-primary font-heading mb-1 uppercase">${block.title}</h2>
+                                <p class="section-label text-accent font-bold mb-4">Mapeo Estructural del Bloque</p>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="section-label text-rose-600">Riesgo Dominante (La Trampa)</p>
+                                        <p class="text-[12px] text-slate-700 leading-snug font-medium italic">"${block.risk}"</p>
+                                    </div>
+                                    <div class="bg-primary/5 p-3 rounded-xl">
+                                        <p class="section-label">Patrón de Apertura</p>
+                                        <p class="text-[11px] text-primary italic leading-tight opacity-80">"${block.guillotine.split(':')[0]}: ${block.risk}"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-2/3">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <p class="section-label">Señales Frecuentes (El Espejismo)</p>
+                                        <p class="text-[11px] text-slate-600 leading-relaxed font-medium">${block.mirage}</p>
+                                    </div>
+                                    <div class="bg-accent/10 p-4 rounded-2xl border-2 border-accent/30 shadow-inner">
+                                        <p class="section-label text-primary font-black mb-1"><i class="fa-solid fa-gavel mr-2"></i>Foco Facilitador</p>
+                                        <p class="text-[11px] text-primary leading-tight font-bold">${block.guillotine}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(ctxCard);
+                }
+            }
+
             let filtered = startups.filter(s => 
                 s.name.toLowerCase().includes(filterText.toLowerCase())
             );
@@ -278,12 +395,16 @@
                 card.className = `cheat-card group bg-white rounded-r-xl border-t border-b border-r border-slate-200 overflow-hidden flex flex-col cursor-pointer ${s.isPlaceholder ? 'opacity-60 grayscale' : ''}`;
                 card.onclick = () => toggleCard(index);
 
+                const perfilColor = s.profile === 'A' ? 'perfil-a' : (s.profile === 'B' ? 'perfil-b' : 'perfil-c');
+
                 card.innerHTML = `
                     <div class="p-5">
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="text-lg font-bold text-primary mt-1 leading-tight group-hover:text-accent transition-colors font-heading uppercase">${s.name}</h3>
-                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${s.sector}</p>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                                    ${s.sector} | Perfil ${s.profile}
+                                </p>
                             </div>
                             <div class="text-slate-300 toggle-icon"><i class="fa-solid fa-chevron-down"></i></div>
                         </div>
@@ -292,7 +413,7 @@
                             <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-bold border border-slate-200">TRL ${s.trl}</span>
                             <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-bold border border-slate-200">${s.model}</span>
                             ${s.tech ? '<span class="bg-blue-50 text-blue-700 text-[9px] px-2 py-0.5 rounded font-bold border border-blue-100 uppercase">Tech In-house</span>' : '<span class="bg-rose-50 text-rose-700 text-[9px] px-2 py-0.5 rounded font-bold border border-rose-100 uppercase">No Tech</span>'}
-                            <span class="bg-accent text-primary text-[9px] px-2 py-0.5 rounded font-bold ml-auto shadow-sm">G${s.group}</span>
+                            <span class="bg-primary text-white text-[9px] px-2 py-0.5 rounded font-bold ml-auto shadow-sm">G${s.group}</span>
                         </div>
                     </div>
 
@@ -304,10 +425,15 @@
                                 <p class="text-[9px] text-primary font-bold mt-1"><i class="fa-solid fa-location-dot mr-1"></i>${s.location}</p>
                             </div>
                             <div class="bg-slate-50 p-2 rounded">
-                                <p class="section-label text-primary">Histórico del Gate</p>
+                                <p class="section-label text-primary">Tracción</p>
                                 <p class="text-[10px] text-slate-600 leading-tight italic">"${s.traction}"</p>
                                 <p class="text-[9px] text-primary font-bold mt-1 uppercase">${s.stage}</p>
                             </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-[#f4ae12]">
+                            <p class="section-label text-primary font-bold mb-1">Foco Socrático (Perfil ${s.profile})</p>
+                            <p class="text-[11px] text-slate-700 leading-snug font-medium italic">"${socraticFocus[s.profile]}"</p>
                         </div>
 
                         <div>
@@ -325,7 +451,7 @@
                                 <i class="fa-solid fa-skull-crossbones mr-2 text-primary"></i> Guillotina EDI
                             </p>
                             <p class="text-[12px] text-primary font-bold italic leading-tight">
-                                "${s.alert}"
+                                "${s.alert.replace(/T(\d)/g, 'C$1')}"
                             </p>
                         </div>
                     </div>
@@ -361,7 +487,6 @@
             renderCards(e.target.value, groupId);
         };
 
-        // Init
         setView('general');
     </script>
 </body>
